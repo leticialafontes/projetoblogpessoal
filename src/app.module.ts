@@ -11,11 +11,10 @@ import { Postagem } from './postagem/entities/postagem.entity';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '1234',
+      password: 'root',
       database: 'db_blogpessoal',
       entities: [Postagem],
-      synchronize: true,
-      logging: true
+      synchronize: true
     }),
     PostagemModule,
   ],
