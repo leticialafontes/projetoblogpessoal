@@ -12,7 +12,8 @@ export class PostagemService {
   async findAll(): Promise<Postagem[]> {
     return await this.postagemRepository.find({
       relations:{
-                tema: true
+                tema: true,
+                usuario:true
       }
     });
   }
@@ -23,7 +24,8 @@ export class PostagemService {
         id,
       },
       relations:{
-                tema: true
+                tema: true,
+                usuario:true
       }
     });
 
@@ -39,7 +41,8 @@ export class PostagemService {
         titulo: ILike(`%${titulo}%`),  //a % significa que tanto faz o que tenha antes do que quero pesquisar e tanto faz o que esta depois, o que eu quero é aquela letra/palavra que inseri, aqui o ILike ele não se preocupa se a pessoa digitar com letra maiúscula ou minúscula, já o Like se preocupa.
       },
       relations:{
-                tema: true
+                tema: true,
+                usuario:true
       }
     });
   }
