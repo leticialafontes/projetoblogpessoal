@@ -10,10 +10,8 @@ import {
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 
-
 @Entity({ name: 'tb_postagens' })
 export class Postagem {
-  
   @ApiProperty()
   @PrimaryGeneratedColumn()
   id: number;
@@ -32,7 +30,6 @@ export class Postagem {
   @UpdateDateColumn()
   data: Date;
 
-  @ApiProperty({ type: () => Usuario })  
   @ManyToOne(() => Tema, (tema) => tema.postagem, {
     onDelete: 'CASCADE',
   })
