@@ -6,7 +6,7 @@ import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 
 @ApiTags('Tema')
 @UseGuards(JwtAuthGuard)
-@Controller("/temas")
+@Controller("/tema")
 @ApiBearerAuth()
 export class TemaController {
     constructor(private readonly temaService: TemaService) {}
@@ -25,7 +25,7 @@ export class TemaController {
 
     @Get("/descricao/:descricao")
     @HttpCode(HttpStatus.OK)
-    findAllBydescricao(@Param('descricao') descricao: string): Promise<Tema[]>{
+    findBydescricao(@Param('descricao') descricao: string): Promise<Tema[]>{
         return this.temaService.findAllByDescricao(descricao);
     }
 

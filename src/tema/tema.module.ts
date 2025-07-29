@@ -11,6 +11,6 @@ import { Tema } from './entities/tema.entity';
   controllers: [TemaController],
   //importação da service de postagem, que irá passar as regras de pesquisas
   providers: [TemaService],
-  exports: [TemaService],
+  exports: [TypeOrmModule],
 })
 export class TemaModule {}

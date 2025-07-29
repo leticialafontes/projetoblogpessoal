@@ -11,12 +11,12 @@ import { JwtStrategy } from './strategy/jwt.strategy';
 
 @Module({
   imports: [
-    forwardRef(()=> UsuarioModule),
+    forwardRef(() => UsuarioModule),
     PassportModule,
     JwtModule.register({
       secret: jwtConstants.secret,
-      signOptions: {expiresIn: '1h'}//aqui define o tempo que vai ficar como validado o acesso, depois desse tempo o passe sai, e o usuario tem que realizar o login novamente.
-    })
+      signOptions: { expiresIn: '24h' }, //aqui define o tempo que vai ficar como validado o acesso, depois desse tempo o passe sai, e o usuario tem que realizar o login novamente.
+    }),
   ],
   providers: [Bcrypt, AuthService, LocalStrategy, JwtStrategy],
   controllers: [AuthController],
